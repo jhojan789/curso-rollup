@@ -1,5 +1,5 @@
 const $body = document.querySelector('body');
-const API = '[GET] https://api.escuelajs.co/api/v1/products?offset=0&limit=10';
+const API = 'https://fakestoreapi.com/products?limit=5';
 
 import logo from './assets/JavaScript-logo.png';
 import './styles/styles.css';
@@ -10,8 +10,8 @@ const main = async ()=>{
   
   const output = products.map(product =>{
     return `
-      <article class="card">
-        <img src="${product.images[0]}"/>
+      <article class="Card">
+        <img src="${product.image}"/>
         <h2>
           ${product.title}
           <small>Price: $ ${product.price}</small>
@@ -24,15 +24,16 @@ const main = async ()=>{
   }).join('');
 
   const section = document.createElement('section');
-  section.classList.add('items');
+  section.classList.add('Items');
   section.innerHTML = output;
   $body.appendChild(section);
 
   const header = document.createElement('header');
   const img = document.createElement('img');
+  img.src = logo;
 
   header.appendChild(img);
-  $body.appendChild(header);
+  $body.prepend(header);
 
 
 }

@@ -15,7 +15,7 @@ export default {
     copy({
       targets:[{
         src: 'src/assets/**/*',
-        dest: 'dest/assets'
+        dest: 'dist/assets'
         
       }]
     }),
